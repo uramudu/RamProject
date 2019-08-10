@@ -1,0 +1,37 @@
+<center>{% include 'home.html' %}</center>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>E-Learning resource locator</title>
+</head>
+<body bgcolor="#d2691e">
+<fieldset style="padding: 3px; width: 15%;">
+    <legend><FONT COLOR="#ffd700" Face='verdana' size='2'><B>Student Home</B></FONT></Legend>
+    <table align="right" border="0" bgcolor="#ffd700">
+        {% for x in res %}
+        <tr><td bgcolor="#adff2f"><a href="/viewfaculty/" style="text-decoration: none">ViewLectures</a></td></tr>
+{#        <tr><td bgcolor="#adff2f"><a href="//" style="text-decoration: none">ViewVideos</a></td></tr>#}
+        <tr><td bgcolor="#adff2f"><a href="/exam/" style="text-decoration: none">Exam</a></td></tr>
+        <tr><td bgcolor="#adff2f"><a href="/neg_exam/" style="text-decoration: none">Exam(Negative Marking)</a></td></tr>
+        <tr><td bgcolor="#adff2f"><a href="/allresults/" style="text-decoration: none">ExamResults</a></td></tr>
+        <tr><td bgcolor="#adff2f"><a href="/viewstudent/?email={{ x.emailid }}" style="text-decoration: none">ViewStudentProfile</a></td></tr>
+        <tr><td bgcolor="#adff2f"><a href="/editprofile{{ x.emailid }}/" style="text-decoration: none">EditStudentProfile</a></td></tr>
+{#        <tr><td bgcolor="#adff2f"><a href="/editprofile/?name={{ x.name }}&emailid={{ x.emailid }}&password={{ x.password }}&gender={{ x.gender }}&contact_no={{ x.contact_no }}&qualification={{ x.qualification }}&course={{ x.course }}&experience={{ x.experience }}&address={{ x.address }}" style="text-decoration: none">EditStudentProfile</a></td></tr>#}
+        <tr><td bgcolor="#adff2f"><a href="/view_status/" style="text-decoration: none">ViewStatus</a></td></tr>
+        <tr><td bgcolor="#adff2f"><a href="/postquestion/" style="text-decoration: none">Postquestion</a></td></tr>
+        <tr><td bgcolor="#adff2f"><a href="/passupdate/?email={{ x.emailid }}" style="text-decoration: none">UpdatePassword</a></td></tr>
+        <tr><td bgcolor="#adff2f"><a href="/exam_report/" style="text-decoration: none">ExamReports</a></td></tr>
+        <tr><td bgcolor="#adff2f"><a href="/admin_logout/" style="text-decoration: none">LogOut</a></td></tr>
+        {% endfor %}
+    </table>
+</fieldset>
+</body>
+</html>
+
+
+<center>
+    {% if message %}
+        <h3><strong>{{ message }}</strong></h3>
+    {% endif %}
+</center>

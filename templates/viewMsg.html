@@ -1,0 +1,20 @@
+<center>{% include 'home.html' %}</center>
+            {% include 'body.html' %}
+
+<center><table border="2">
+    <tr bgcolor="#ee82ee">
+        <th>Email</th>
+        <th>question</th>
+    </tr>
+{% if res %}
+    {% for x in res %}
+    <tr bgcolor="#ffebcd">
+    <td>{{ x.email }}</td>
+    <td>{{ x.question }}</td>
+    </tr>
+    {% endfor %}
+{% else %}
+    <tr bgcolor="#ffebcd"><th colspan="5"><h4>Sorry, no Questions are Posted</h4></th></tr>
+{% endif %}
+</table>
+</center>

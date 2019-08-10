@@ -1,0 +1,25 @@
+<center>{% include 'home.html' %}</center>
+            {% include 'body.html' %}
+<center>
+<table border="2" bgcolor="#dcdcdc">
+    <tr bgcolor="#ffebcd">
+        <th>TestId</th>
+        <th>Subject</th>
+        <th>Email</th>
+        <th>Date</th>
+    </tr>
+{% if res2 %}
+        {% for y in res2 %}
+            <tr>
+            <td>{{ y.id }}</td>
+            <td>{{ y.type }}</td>
+            <td>{{ y.email }}</td>
+            <td>{{ y.date }}</td>
+            </tr>
+        {% endfor %}
+{% else %}
+    <tr><th colspan="10"><h4>Sorry, no results is here</h4></th></tr>
+{% endif %}
+{#    {% endfor %}#}
+</table>
+</center>

@@ -1,0 +1,140 @@
+<body  bgcolor="#d2691e">
+<center>{% include 'home.html' %}</center>
+<fieldset style="padding: 3px; width: 15%;">
+    <legend><FONT COLOR="#ffd700" Face='verdana' size='2'><B>Student Home</B></FONT></Legend>
+<table align="right" border="0" bgcolor="#ffd700">
+        {% for x in res %}
+        <tr><td bgcolor="#adff2f"><a href="/viewfaculty/" style="text-decoration: none">ViewLectures</a></td></tr>
+{#        <tr><td bgcolor="#adff2f"><a href="//" style="text-decoration: none">ViewVideos</a></td></tr>#}
+        <tr><td bgcolor="#adff2f"><a href="/exam/" style="text-decoration: none">Exam</a></td></tr>
+        <tr><td bgcolor="#adff2f"><a href="/neg_exam/" style="text-decoration: none">Exam(Negative Marking)</a></td></tr>
+        <tr><td bgcolor="#adff2f"><a href="/allresults/" style="text-decoration: none">ExamResults</a></td></tr>
+        <tr><td bgcolor="#adff2f"><a href="/viewstudent/?email={{ x.emailid }}" style="text-decoration: none">ViewStudentProfile</a></td></tr>
+            <tr><td bgcolor="#adff2f"><a href="/editprofile{{ x.emailid }}/" style="text-decoration: none">EditStudentProfile</a></td></tr>
+{#            <tr><td bgcolor="#adff2f"><a href="/editprofile/?name={{ x.name }}&emailid={{ x.emailid }}&password={{ x.password }}&gender={{ x.gender }}&contact_no={{ x.contact_no }}&qualification={{ x.qualification }}&course={{ x.course }}&experience={{ x.experience }}&address={{ x.address }}" style="text-decoration: none">EditStudentProfile</a></td></tr>#}
+        <tr><td bgcolor="#adff2f"><a href="/view_status/" style="text-decoration: none">ViewStatus</a></td></tr>
+        <tr><td bgcolor="#adff2f"><a href="/postquestion/" style="text-decoration: none">Postquestion</a></td></tr>
+        <tr><td bgcolor="#adff2f"><a href="/passupdate/?email={{ x.emailid }}" style="text-decoration: none">UpdatePassword</a></td></tr>
+        <tr><td bgcolor="#adff2f"><a href="/exam_report/" style="text-decoration: none">ExamReports</a></td></tr>
+        <tr><td bgcolor="#adff2f"><a href="/admin_logout/" style="text-decoration: none">LogOut</a></td></tr>
+        {% endfor %}
+    </table>
+</fieldset>
+
+
+
+<form action="/asp_option/" method="post">
+    {% csrf_token %}
+    <center>
+        <h3><u>Java Test</u></h3>
+        <table>
+            <tr>
+                <td>1) What type of items are valid for use in the value list of a Case clause?</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="hidden" name="q1" value="What type of items are valid for use in the value list of a Case clause?">
+                    <input type="hidden" name="c1" value="all of the above">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <ol type="a">
+                        <li>
+                            <input type="radio" name="a1" value="literals">literals
+                        </li>
+                        <li>
+                            <input type="radio" name="a1" value="all of the above">all of the above
+                        </li>
+                        <li>
+                            <input type="radio" name="a1" value="variables">variables
+                        </li>
+                        <li>
+                            <input type="radio" name="a1" value="expressions">expressions
+                        </li>
+                    </ol>
+                </td>
+            </tr>
+            <tr><td>2.Variables appearing in the header of a Function procedure are called ____________.</td></tr>
+            <tr>
+                <td>
+                    <input type="hidden" name="q2" value="Variables appearing in the header of a Function procedure are called">
+                    <input type="hidden" name="c2" value="parameters">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <ol type="a">
+                        <li>
+                            <input type="radio" name="a2" value="values of the function">values of the function
+                        </li>
+                        <li>
+                            <input type="radio" name="a2" value="coordinates">coordinates
+                        </li>
+                        <li>
+                            <input type="radio" name="a2" value="parameters">parameters
+                        </li>
+                        <li>
+                            <input type="radio" name="a2" value="arguments">arguments
+                        </li>
+                    </ol>
+                </td>
+            </tr>
+
+            <tr><td>3.Asc(“A”) is 65. What is Asc(“C”)?</td></tr>
+            <tr>
+                <td>
+                    <input type="hidden" name="q3" value="Asc(“A”) is 65. What is Asc(“C”)">
+                    <input type="hidden" name="c3" value="67">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <ol type="a">
+                        <li>
+                            <input type="radio" name="a3" value="66">66
+                        </li>
+                        <li>
+                            <input type="radio" name="a3" value="68">68
+                        </li>
+                        <li>
+                            <input type="radio" name="a3" value="C">C
+                        </li>
+                        <li>
+                            <input type="radio" name="a3" value="67">67
+                        </li>
+                    </ol>
+                </td>
+            </tr>
+
+            <tr><td>4.Constructs in which an If block is contained inside another If block are called:</td></tr>
+            <tr>
+                <td>
+                    <input type="hidden" name="q4" value="block is contained inside another If block are called">
+                    <input type="hidden" name="c4" value="nested If blocks">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <ol type="a">
+                        <li>
+                            <input type="radio" name="a4" value="multi-If blocks">multi-If blocks
+                        </li>
+                        <li>
+                            <input type="radio" name="a4" value="nested If blocks">nested If blocks
+                        </li>
+                        <li>
+                            <input type="radio" name="a4" value="sequential If blocks">sequential If blocks
+                        </li>
+                        <li>
+                            <input type="radio" name="a4" value="none of the above">none of the above
+                        </li>
+                    </ol>
+                </td>
+            </tr>
+            <tr><th><button type="submit">Submit</button></th></tr>
+        </table>
+    </center>
+</form>
+
+</body>

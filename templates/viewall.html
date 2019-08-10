@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>E-Learning resource locator</title>
+</head>
+<body bgcolor="#d2691e">
+            <center>{% include 'home.html' %}</center>
+                {% include 'body.html' %}
+<table border="2" align="center" bgcolor="#87ceeb">
+    <tr bgcolor="#5f9ea0">
+        <th>Name</th>
+        <th>Emali_Id</th>
+{#        <th>Password</th>#}
+        <th>Gender</th>
+        <th>Contact_No</th>
+        <th>Qualification</th>
+        <th>Course</th>
+        <th>Experience</th>
+        <th>Address</th>
+    </tr>
+    {% for x in object_list %}
+        <tr bgcolor="#dcdcdc">
+        <td>{{ x.name }}</td>
+        <td>{{ x.emailid }}</td>
+{#        <td>{{ x.password }}</td>#}
+        <td>{{ x.gender }}</td>
+        <td>{{ x.contact_no }}</td>
+        <td>{{ x.qualification }}</td>
+        <td>{{ x.course }}</td>
+        <td>{{ x.experience }}</td>
+        <td>{{ x.address }}</td>
+        </tr>
+    {% endfor %}
+
+</table>
+
+</body>
+</html>
+

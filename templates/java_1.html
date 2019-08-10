@@ -1,0 +1,140 @@
+<body  bgcolor="#d2691e">
+<center>{% include 'home.html' %}</center>
+<fieldset style="padding: 3px; width: 15%;">
+    <legend><FONT COLOR="#ffd700" Face='verdana' size='2'><B>Student Home</B></FONT></Legend>
+<table align="right" border="0" bgcolor="#ffd700">
+        {% for x in res %}
+        <tr><td bgcolor="#adff2f"><a href="/viewfaculty/" style="text-decoration: none">ViewLectures</a></td></tr>
+{#        <tr><td bgcolor="#adff2f"><a href="//" style="text-decoration: none">ViewVideos</a></td></tr>#}
+        <tr><td bgcolor="#adff2f"><a href="/exam/" style="text-decoration: none">Exam</a></td></tr>
+        <tr><td bgcolor="#adff2f"><a href="/neg_exam/" style="text-decoration: none">Exam(Negative Marking)</a></td></tr>
+        <tr><td bgcolor="#adff2f"><a href="/allresults/" style="text-decoration: none">ExamResults</a></td></tr>
+        <tr><td bgcolor="#adff2f"><a href="/viewstudent/?email={{ x.emailid }}" style="text-decoration: none">ViewStudentProfile</a></td></tr>
+            <tr><td bgcolor="#adff2f"><a href="/editprofile{{ x.emailid }}/" style="text-decoration: none">EditStudentProfile</a></td></tr>
+{#            <tr><td bgcolor="#adff2f"><a href="/editprofile/?name={{ x.name }}&emailid={{ x.emailid }}&password={{ x.password }}&gender={{ x.gender }}&contact_no={{ x.contact_no }}&qualification={{ x.qualification }}&course={{ x.course }}&experience={{ x.experience }}&address={{ x.address }}" style="text-decoration: none">EditStudentProfile</a></td></tr>#}
+        <tr><td bgcolor="#adff2f"><a href="/view_status/" style="text-decoration: none">ViewStatus</a></td></tr>
+        <tr><td bgcolor="#adff2f"><a href="/postquestion/" style="text-decoration: none">Postquestion</a></td></tr>
+        <tr><td bgcolor="#adff2f"><a href="/passupdate/?email={{ x.emailid }}" style="text-decoration: none">UpdatePassword</a></td></tr>
+        <tr><td bgcolor="#adff2f"><a href="/exam_report/" style="text-decoration: none">ExamReports</a></td></tr>
+        <tr><td bgcolor="#adff2f"><a href="/admin_logout/" style="text-decoration: none">LogOut</a></td></tr>
+        {% endfor %}
+    </table>
+</fieldset>
+
+
+
+<form action="/java_option/" method="post">
+    {% csrf_token %}
+    <center>
+        <h3><u>Java Test</u></h3>
+        <table>
+            <tr>
+                <td>1) The default value of a static integer variable of a class in Java is</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="hidden" name="q1" value="The default value of a static integer variable of a class in Java is">
+                    <input type="hidden" name="c1" value="0">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <ol type="a">
+                        <li>
+                            <input type="radio" name="a1" value="0">0
+                        </li>
+                        <li>
+                            <input type="radio" name="a1" value="1">1
+                        </li>
+                        <li>
+                            <input type="radio" name="a1" value="Garbage value">Garbage value
+                        </li>
+                        <li>
+                            <input type="radio" name="a1" value="Null">Null
+                        </li>
+                    </ol>
+                </td>
+            </tr>
+            <tr><td>2.To prevent any method from overriding, we declare the method as,</td></tr>
+            <tr>
+                <td>
+                    <input type="hidden" name="q2" value="To prevent any method from overriding, we declare the method as">
+                    <input type="hidden" name="c2" value="final">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <ol type="a">
+                        <li>
+                            <input type="radio" name="a2" value="static">static
+                        </li>
+                        <li>
+                            <input type="radio" name="a2" value="const">const
+                        </li>
+                        <li>
+                            <input type="radio" name="a2" value="final">final
+                        </li>
+                        <li>
+                            <input type="radio" name="a2" value="abstract">abstract
+                        </li>
+                    </ol>
+                </td>
+            </tr>
+
+            <tr><td>3.The fields in an interface are implicitly specified as,</td></tr>
+            <tr>
+                <td>
+                    <input type="hidden" name="q3" value="The fields in an interface are implicitly specified as,">
+                    <input type="hidden" name="c3" value="both static and final">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <ol type="a">
+                        <li>
+                            <input type="radio" name="a3" value="static only">static only
+                        </li>
+                        <li>
+                            <input type="radio" name="a3" value="protected">protected
+                        </li>
+                        <li>
+                            <input type="radio" name="a3" value="both static and final">both static and final
+                        </li>
+                        <li>
+                            <input type="radio" name="a3" value="private">private
+                        </li>
+                    </ol>
+                </td>
+            </tr>
+
+            <tr><td>4.All exception types are subclasses of the built-in class</td></tr>
+            <tr>
+                <td>
+                    <input type="hidden" name="q4" value="All exception types are subclasses of the built-in class">
+                    <input type="hidden" name="c4" value="Throwable">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <ol type="a">
+                        <li>
+                            <input type="radio" name="a4" value="Exception">Exception
+                        </li>
+                        <li>
+                            <input type="radio" name="a4" value="Throwable">Throwable
+                        </li>
+                        <li>
+                            <input type="radio" name="a4" value="RuntimeException">RuntimeException
+                        </li>
+                        <li>
+                            <input type="radio" name="a4" value="Error">Error
+                        </li>
+                    </ol>
+                </td>
+            </tr>
+            <tr><th><button type="submit">Submit</button></th></tr>
+        </table>
+    </center>
+</form>
+
+</body>

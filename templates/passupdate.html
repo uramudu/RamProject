@@ -1,0 +1,79 @@
+<center>{% include 'home.html' %}</center>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>E-Learning resource locator</title>
+</head>
+<body bgcolor="#d2691e">
+<fieldset style="padding: 3px; width: 15%;">
+    <legend><FONT COLOR="#ffd700" Face='verdana' size='2'><B>Student Home</B></FONT></Legend>
+    <table align="right" border="0" bgcolor="#ffd700">
+        {% for x in res %}
+        <tr><td bgcolor="#adff2f"><a href="/viewfaculty/" style="text-decoration: none">ViewLectures</a></td></tr>
+{#        <tr><td bgcolor="#adff2f"><a href="//" style="text-decoration: none">ViewVideos</a></td></tr>#}
+        <tr><td bgcolor="#adff2f"><a href="/exam/" style="text-decoration: none">Exam</a></td></tr>
+        <tr><td bgcolor="#adff2f"><a href="/neg_exam/" style="text-decoration: none">Exam(Negative Marking)</a></td></tr>
+        <tr><td bgcolor="#adff2f"><a href="/allresults/" style="text-decoration: none">ExamResults</a></td></tr>
+        <tr><td bgcolor="#adff2f"><a href="/viewstudent/?email={{ x.emailid }}" style="text-decoration: none">ViewStudentProfile</a></td></tr>
+        <tr><td bgcolor="#adff2f"><a href="/editprofile{{ x.emailid }}/" style="text-decoration: none">EditStudentProfile</a></td></tr>
+{#        <tr><td bgcolor="#adff2f"><a href="/editprofile/?name={{ x.name }}&emailid={{ x.emailid }}&password={{ x.password }}&gender={{ x.gender }}&contact_no={{ x.contact_no }}&qualification={{ x.qualification }}&course={{ x.course }}&experience={{ x.experience }}&address={{ x.address }}" style="text-decoration: none">EditStudentProfile</a></td></tr>#}
+        <tr><td bgcolor="#adff2f"><a href="/view_status/" style="text-decoration: none">ViewStatus</a></td></tr>
+        <tr><td bgcolor="#adff2f"><a href="/postquestion/" style="text-decoration: none">Postquestion</a></td></tr>
+        <tr><td bgcolor="#adff2f"><a href="/passupdate/?email={{ x.emailid }}" style="text-decoration: none">UpdatePassword</a></td></tr>
+        <tr><td bgcolor="#adff2f"><a href="/exam_report/" style="text-decoration: none">ExamReports</a></td></tr>
+        <tr><td bgcolor="#adff2f"><a href="/admin_logout/" style="text-decoration: none">LogOut</a></td></tr>
+        {% endfor %}
+    </table>
+</fieldset>
+
+<form action="/newpass/" method="post">
+    {% csrf_token %}
+    <table align="center" border="2">
+        <tr><th><h2><font color="#90ee90">Change Student Password</font></h2></th></tr>
+        {% for x in res %}
+             <tr>
+                <td>Username:<input type="text" name="uname" placeholder="email" value="{{ x.emailid }}" readonly required></td>
+            </tr>
+        <tr>
+            <td>Old Password:<input type="password" name="oldpw" placeholder="Old Pass" required autofocus></td>
+        </tr>
+        <tr>
+            <td>New Password:<input type="password" name="newpw" placeholder="New Pass" required></td>
+        </tr>
+
+            <input type="hidden" name="name" value="{{ x.name }}" placeholder="name">
+
+
+            <input type="hidden" name="gender" value="{{ x.gender }}">
+
+
+            <input type="hidden" name="contact_no" value="{{ x.contact_no }}">
+
+
+            <input type="hidden" name="qualification" value="{{ x.qualification }}">
+
+
+            <input type="hidden" name="course" value="{{ x.course }}">
+
+
+            <input type="hidden" name="experience" value="{{ x.experience }}">
+
+
+            <input type="hidden" name="address" value="{{ x.address }}">
+
+            <tr>
+            <td align="center"><input type="submit" value="Update"></td>
+        </tr>
+        {% endfor %}
+    </table>
+</form>
+
+</body>
+</html>
+
+<center>
+    {% if msg %}
+        <h4><strong>{{ msg }}</strong></h4>
+    {% endif %}
+</center>

@@ -1,0 +1,26 @@
+<center>{% include 'home.html' %}</center>
+{% include 'body.html' %}
+<form action="/updatepass/" method="post">
+    {% csrf_token %}
+    <table align="center" border="2" style="margin-bottom: 40px">
+        <tr><th><h2><font color="#90ee90">Change Password</font></h2></th></tr>
+        {% for x in res %}
+             <tr>
+                <td>Username:<input type="text" name="uname" placeholder="Username" value="{{ x.adminemail }}" readonly required></td>
+            </tr>
+        {% endfor %}
+        <tr>
+            <td>Old Password:<input type="password" name="oldpw" placeholder="Old Pass" required autofocus></td>
+        </tr>
+        <tr>
+            <td>New Password:<input type="password" name="newpw" placeholder="New Pass" required></td>
+        </tr>
+        <tr>
+            <td align="center"><input type="submit" value="Update"></td>
+        </tr>
+    </table>
+</form>
+
+{% if msg %}
+    <h4><strong>{{ msg }}</strong></h4>
+{% endif %}

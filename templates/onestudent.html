@@ -1,0 +1,31 @@
+{% include 'loginsuccess.html' %}
+
+
+
+
+<table align="center" border="2" bgcolor="#dcdcdc">
+    <tr>
+        <th>Name</th>
+        <th>Email_Id</th>
+        <th>Gender</th>
+        <th>Password</th>
+        <th>Contact_No</th>
+        <th>Qualification</th>
+        <th>Course</th>
+        <th>Experience</th>
+        <th>Address</th>
+    </tr>
+    {% for x in res %}
+    <tr bgcolor="#90ee90" align="center">
+        <td>{{ x.name }}</td>
+        <td>{{ x.emailid }}</td>
+        <td>{{ x.gender }}</td>
+        <td>{{ x.password }}</td>
+        <td>{{ x.contact_no }}</td>
+        <td>{{ x.qualification }}</td>
+        <td>{{ x.course }}</td>
+        <td>{{ x.experience }}</td>
+        <td>{{ x.address }}</td>
+    </tr>
+    {% endfor %}
+</table>

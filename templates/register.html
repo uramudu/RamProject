@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load staticfiles %}
+    <meta charset="UTF-8">
+    <title>E-Learning resource locator</title>
+</head>
+<body bgcolor="#d2691e">
+<center>{% include 'home.html' %}</center>
+<br>
+<form action="/save/" method="post">
+    {% csrf_token %}
+    <table border="1" align="center">
+        <tr><th colspan="2">Registration form</th></tr>
+        <td colspan="2"><p><font color="red">*</font><b>Fields are compulsory</b></p></td>
+        <tr>
+            <td>
+                <font color="red">*</font>
+                Student Name
+                <input type="text" name="name" placeholder="Name" required>
+            </td>
+            <td>
+                <font color="red">*</font>
+                Email_Id
+                <input type="email" name="email" placeholder="Email" required>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <font color="red">*</font>
+                Gender
+                <input type="radio" name="gender" value="Male" checked>Male
+                <input type="radio" name="gender" value="Female">Femaale
+            </td>
+            <td>
+                <font color="red">*</font>
+                Password
+                <input type="password" name="password" placeholder="Password" required>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <font color="red">*</font>
+                Contact_NO
+                <input type="number" name="contact_no" placeholder="Contact_No" required>
+            </td>
+            <td>
+                <font color="red">*</font>
+                Qualification
+                <input type="text" name="qualification" placeholder="Qualification" required>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <font color="red">*</font>
+                Choose Course
+                <select name="course">
+                    <option>java</option>
+                    <option>python</option>
+                    <option>sql</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <font color="red">*</font>
+                Experience
+                <input type="number" name="experience" placeholder="Experience" required>
+            </td>
+            <td>
+                <font color="red">*</font>
+                Address
+                <textarea name="address" placeholder="Address"></textarea>
+            </td>
+        </tr>
+        <tr><th colspan="2"><button type="submit">Submit</button></th></tr>
+    </table>
+</form>
+</body>
+</html>
+

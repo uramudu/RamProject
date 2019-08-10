@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>E-Learning resource locator</title>
+</head>
+<body bgcolor="#d2691e">
+<center>{% include 'home.html' %}</center>
+{% include 'body.html' %}
+<table style="padding: 1px" align="center">
+        <td align="center">
+            <form method="post">
+            {% csrf_token%}
+                <fieldset>
+                    <legend align="center"><FONT COLOR="#ffd700" Face='verdana' size='2'><B>Faculty Registration</B></FONT></Legend>
+            <table>
+                {{ form }}
+                <tr><th colspan="2">
+                    <button type="submit">Submit</button>
+                </th></tr>
+            </table>
+                </fieldset>
+            </form>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
+

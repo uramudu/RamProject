@@ -1,0 +1,29 @@
+<center>{% include 'home.html' %}</center>
+            {% include 'body.html' %}
+
+
+
+
+
+<center>
+    <table border="2" bgcolor="#ffebcd">
+        <tr bgcolor="#90ee90">
+            <th>Type</th>
+            <th>Email</th>
+            <th>TestID</th>
+            <th>Date</th>
+        </tr>
+    {% if res3 %}
+        {% for x in res3 %}
+            <tr>
+            <td>{{ x.type }}</td>
+            <td>{{ x.email }}</td>
+            <td>{{ x.id }}</td>
+            <td>{{ x.date }}</td>
+            </tr>
+        {% endfor %}
+    {% else %}
+        <tr><td colspan="10"><h4>Sorry,no exam writen</h4></td></tr>
+    {% endif %}
+    </table>
+</center>

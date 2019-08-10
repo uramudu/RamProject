@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>E-Learning resource locator</title>
+</head>
+<body bgcolor="#d2691e">
+<center>{% include 'home.html' %}</center>
+<form action="/login/" method="post">
+    {% csrf_token %}
+    <center><fieldset style="padding: 3px;width:100%;" align="center">
+        <legend><FONT COLOR="" Face='verdana' size='2'><B>Login</B></FONT></Legend>
+        <table align="center">
+            <tr><td><font face="times new roman">EmailID</font><font color="red">*</font><input type="text" name="email" placeholder="Emailid" required autofocus></td></tr>
+            <tr><td><font face="times new roman">Password</font><font color="red">*</font><input type="password" name="password" placeholder="Password" required ></td></tr>
+            <tr><td align="center"><button type="submit">Submit</button> </td></tr>
+        </table>
+    </fieldset>
+    </center>
+    <center>
+        <fieldset style="padding: 3px; width: 100%;" align="center">
+            <br>
+            <legend><FONT COLOR="" Face='verdana' size='2'><B>New Student Registration</B></FONT></Legend>
+            <font face="arial" color="#dcdcdc">If you are not registered by Admin</font>
+            <br>
+            <br>
+            Register Now<a href="/register/"><strong>New Registration</strong></a><br>
+{#            already registerd:<a href="/studentlogin/"><font color="#ffebcd">Login</font></a>#}
+        </fieldset>
+    </center>
+</form>
+</body>
+</html>
